@@ -2,6 +2,7 @@
 
 @if(isset($name))
     <p>Hello, {{$name}}! your age = {{$age}}</p>
+    <p>Your email = {{$email}}</p>
     <h2>These are your posts</h2>
     @foreach ($posts as $post)
         <p>{{$post}}</hr></p>
