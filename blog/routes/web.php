@@ -17,3 +17,19 @@ Route::get('/home', function(){
 });
 
 Route::get('/login', function(){})->name('login');
+
+// dynamic routing with wildcards
+
+Route::get('users/{id}', function ($id) {
+    $users = [
+        1 => 'Alice',
+        2 => 'Bob',
+        3 => 'Charlie'
+    ];
+    
+    if (!array_key_exists($id, $users)) {
+        abort(404);
+    }
+    
+    return view('users', ['user' => $users[$id]]);
+});
