@@ -7,11 +7,13 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function(){
-    $a = 12;
+    $a = 13;
     $b = 20;
-    $c = $a+$b;
+    $age = $a+$b;
+    $name = "Brent";
 
-    return "lalalala... hello world: ".$c;
+    $post=['css','html','php','javascript'];
+    return view('home', ["name"=>$name, "age"=>$age,"posts"=>$post]);
 });
 
 Route::get('/login', function(){})->name('login');
